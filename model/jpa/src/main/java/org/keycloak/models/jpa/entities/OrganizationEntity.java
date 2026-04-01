@@ -72,6 +72,19 @@ public class OrganizationEntity {
     @Column(name = "REALM_ID")
     private String realmId;
 
+    //new columns for session timeout
+    @Column(name = "SESSION_IDLE_TIMEOUT")
+    protected int sessionIdleTimeout;
+
+    @Column(name = "SESSION_MAX_LIFESPAN")
+    protected int sessionMaxLifespan;
+
+    @Column(name = "SESSION_IDLE_TIMEOUT_REMEMBER_ME")
+    protected int sessionIdleTimeoutRememberMe;
+
+    @Column(name = "SESSION_MAX_LIFESPAN_REMEMBER_ME")
+    protected int sessionMaxLifespanRememberMe;
+
     /**
      * References the internal Group used for organization membership.
      */
@@ -184,6 +197,39 @@ public class OrganizationEntity {
     public void removeGroup(GroupEntity group) {
         getGroups().remove(group);
         group.setOrganization(null);
+    }
+
+    //our getter and setter methods for timeout
+    public int getSessionIdleTimeout() { 
+        return sessionIdleTimeout; 
+    }
+    
+    public void setSessionIdleTimeout(int sessionIdleTimeout) { 
+        this.sessionIdleTimeout = sessionIdleTimeout; 
+    }
+
+    public int getSessionMaxLifespan() { 
+        return sessionMaxLifespan; 
+    }
+    
+    public void setSessionMaxLifespan(int sessionMaxLifespan) { 
+        this.sessionMaxLifespan = sessionMaxLifespan; 
+    }
+
+    public int getSessionIdleTimeoutRememberMe() { 
+        return sessionIdleTimeoutRememberMe; 
+    }
+    
+    public void setSessionIdleTimeoutRememberMe(int timeout) { 
+        this.sessionIdleTimeoutRememberMe = timeout; 
+    }
+
+    public int getSessionMaxLifespanRememberMe() { 
+        return sessionMaxLifespanRememberMe; 
+    }
+    
+    public void setSessionMaxLifespanRememberMe(int timeout) { 
+        this.sessionMaxLifespanRememberMe = timeout; 
     }
 
     @Override
