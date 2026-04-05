@@ -194,49 +194,54 @@ public class OrganizationAdapter implements OrganizationModel {
         return getId().hashCode();
     }
 
-    //delegate refers to JPA adapter and cached refers to our cached snapshot
-    //isUpdated() passing means that cache has been invalidated so that is why it returns the delegate instead
+    // updated holds a fresh OrganizationModel from JPA, populated either because
+    // the cache was invalidated or because a write already happened this request.
+    // If updated is non-null, read from it directly instead of the stale cache.
     @Override
     public int getSessionIdleTimeout() {
-        if (isUpdated()) return delegate.getSessionIdleTimeout();
+        if (isUpdated()) return updated.getSessionIdleTimeout();
         return cached.getSessionIdleTimeout();
     }
-    
+
     @Override
     public void setSessionIdleTimeout(int timeout) {
-        getDelegateForUpdate().setSessionIdleTimeout(timeout);
+        getDelegateForUpdate();
+        updated.setSessionIdleTimeout(timeout);
     }
 
     @Override
     public int getSessionMaxLifespan() {
-        if (isUpdated()) return delegate.getSessionMaxLifespan();
+        if (isUpdated()) return updated.getSessionMaxLifespan();
         return cached.getSessionMaxLifespan();
     }
 
     @Override
     public void setSessionMaxLifespan(int timeout) {
-        getDelegateForUpdate().setSessionMaxLifespan(timeout);
+        getDelegateForUpdate();
+        updated.setSessionMaxLifespan(timeout);
     }
 
     @Override
     public int getSessionIdleTimeoutRememberMe() {
-        if (isUpdated()) return delegate.getSessionIdleTimeoutRememberMe();
+        if (isUpdated()) return updated.getSessionIdleTimeoutRememberMe();
         return cached.getSessionIdleTimeoutRememberMe();
     }
 
     @Override
     public void setSessionIdleTimeoutRememberMe(int timeout) {
-        getDelegateForUpdate().setSessionIdleTimeoutRememberMe(timeout);
+        getDelegateForUpdate();
+        updated.setSessionIdleTimeoutRememberMe(timeout);
     }
 
     @Override
     public int getSessionMaxLifespanRememberMe() {
-        if (isUpdated()) return delegate.getSessionMaxLifespanRememberMe();
+        if (isUpdated()) return updated.getSessionMaxLifespanRememberMe();
         return cached.getSessionMaxLifespanRememberMe();
     }
 
     @Override
     public void setSessionMaxLifespanRememberMe(int timeout) {
-        getDelegateForUpdate().setSessionMaxLifespanRememberMe(timeout);
+        getDelegateForUpdate();
+        updated.setSessionMaxLifespanRememberMe(timeout);
     }
 }

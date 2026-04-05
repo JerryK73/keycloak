@@ -63,10 +63,10 @@ public class CachedOrganization extends AbstractRevisioned implements InRealm {
         this.idps = organization.getIdentityProviders().collect(Collectors.toSet());
 
 	//add our variables to constructor
-	this.sessionIdleTimeout = model.getSessionIdleTimeout();
-        this.sessionMaxLifespan = model.getSessionMaxLifespan();
-        this.sessionIdleTimeoutRememberMe = model.getSessionIdleTimeoutRememberMe();
-        this.sessionMaxLifespanRememberMe = model.getSessionMaxLifespanRememberMe();
+	this.sessionIdleTimeout = organization.getSessionIdleTimeout();
+        this.sessionMaxLifespan = organization.getSessionMaxLifespan();
+        this.sessionIdleTimeoutRememberMe = organization.getSessionIdleTimeoutRememberMe();
+        this.sessionMaxLifespanRememberMe = organization.getSessionMaxLifespanRememberMe();
     }
 
     @Override
