@@ -74,16 +74,16 @@ public class OrganizationEntity {
 
     //new columns for session timeout
     @Column(name = "SESSION_IDLE_TIMEOUT")
-    protected int sessionIdleTimeout;
+    protected Integer sessionIdleTimeout;
 
     @Column(name = "SESSION_MAX_LIFESPAN")
-    protected int sessionMaxLifespan;
+    protected Integer sessionMaxLifespan;
 
     @Column(name = "SESSION_IDLE_TIMEOUT_REMEMBER_ME")
-    protected int sessionIdleTimeoutRememberMe;
+    protected Integer sessionIdleTimeoutRememberMe;
 
     @Column(name = "SESSION_MAX_LIFESPAN_REMEMBER_ME")
-    protected int sessionMaxLifespanRememberMe;
+    protected Integer sessionMaxLifespanRememberMe;
 
     /**
      * References the internal Group used for organization membership.
@@ -200,35 +200,35 @@ public class OrganizationEntity {
     }
 
     //our getter and setter methods for timeout
-    public int getSessionIdleTimeout() { 
+    public Integer getSessionIdleTimeout() { 
         return sessionIdleTimeout; 
     }
     
-    public void setSessionIdleTimeout(int sessionIdleTimeout) { 
+    public void setSessionIdleTimeout(Integer sessionIdleTimeout) { 
         this.sessionIdleTimeout = sessionIdleTimeout; 
     }
 
-    public int getSessionMaxLifespan() { 
+    public Integer getSessionMaxLifespan() { 
         return sessionMaxLifespan; 
     }
     
-    public void setSessionMaxLifespan(int sessionMaxLifespan) { 
+    public void setSessionMaxLifespan(Integer sessionMaxLifespan) { 
         this.sessionMaxLifespan = sessionMaxLifespan; 
     }
 
-    public int getSessionIdleTimeoutRememberMe() { 
+    public Integer getSessionIdleTimeoutRememberMe() { 
         return sessionIdleTimeoutRememberMe; 
     }
     
-    public void setSessionIdleTimeoutRememberMe(int timeout) { 
+    public void setSessionIdleTimeoutRememberMe(Integer timeout) { 
         this.sessionIdleTimeoutRememberMe = timeout; 
     }
 
-    public int getSessionMaxLifespanRememberMe() { 
+    public Integer getSessionMaxLifespanRememberMe() { 
         return sessionMaxLifespanRememberMe; 
     }
     
-    public void setSessionMaxLifespanRememberMe(int timeout) { 
+    public void setSessionMaxLifespanRememberMe(Integer timeout) { 
         this.sessionMaxLifespanRememberMe = timeout; 
     }
 
