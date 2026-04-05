@@ -193,4 +193,50 @@ public class OrganizationAdapter implements OrganizationModel {
     public int hashCode() {
         return getId().hashCode();
     }
+
+    //delegate refers to JPA adapter and cached refers to our cached snapshot
+    //isUpdated() passing means that cache has been invalidated so that is why it returns the delegate instead
+    @Override
+    public int getSessionIdleTimeout() {
+        if (isUpdated()) return delegate.getSessionIdleTimeout();
+        return cached.getSessionIdleTimeout();
+    }
+    
+    @Override
+    public void setSessionIdleTimeout(int timeout) {
+        getDelegateForUpdate().setSessionIdleTimeout(timeout);
+    }
+
+    @Override
+    public int getSessionMaxLifespan() {
+        if (isUpdated()) return delegate.getSessionMaxLifespan();
+        return cached.getSessionMaxLifespan();
+    }
+
+    @Override
+    public void setSessionMaxLifespan(int timeout) {
+        getDelegateForUpdate().setSessionMaxLifespan(timeout);
+    }
+
+    @Override
+    public int getSessionIdleTimeoutRememberMe() {
+        if (isUpdated()) return delegate.getSessionIdleTimeoutRememberMe();
+        return cached.getSessionIdleTimeoutRememberMe();
+    }
+
+    @Override
+    public void setSessionIdleTimeoutRememberMe(int timeout) {
+        getDelegateForUpdate().setSessionIdleTimeoutRememberMe(timeout);
+    }
+
+    @Override
+    public int getSessionMaxLifespanRememberMe() {
+        if (isUpdated()) return delegate.getSessionMaxLifespanRememberMe();
+        return cached.getSessionMaxLifespanRememberMe();
+    }
+
+    @Override
+    public void setSessionMaxLifespanRememberMe(int timeout) {
+        getDelegateForUpdate().setSessionMaxLifespanRememberMe(timeout);
+    }
 }

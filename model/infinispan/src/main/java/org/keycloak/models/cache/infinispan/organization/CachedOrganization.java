@@ -44,6 +44,12 @@ public class CachedOrganization extends AbstractRevisioned implements InRealm {
     private final Set<OrganizationDomainModel> domains;
     private final Set<IdentityProviderModel> idps;
 
+    //add our variables
+    private int sessionIdleTimeout;
+    private int sessionMaxLifespan;
+    private int sessionIdleTimeoutRememberMe;
+    private int sessionMaxLifespanRememberMe;
+
     public CachedOrganization(long revision, RealmModel realm, OrganizationModel organization) {
         super(revision, organization.getId());
         this.realm = realm.getId();
@@ -55,6 +61,12 @@ public class CachedOrganization extends AbstractRevisioned implements InRealm {
         this.attributes = new DefaultLazyLoader<>(orgModel -> new MultivaluedHashMap<>(orgModel.getAttributes()), MultivaluedHashMap::new);
         this.domains = organization.getDomains().collect(Collectors.toSet());
         this.idps = organization.getIdentityProviders().collect(Collectors.toSet());
+
+	//add our variables to constructor
+	this.sessionIdleTimeout = model.getSessionIdleTimeout();
+        this.sessionMaxLifespan = model.getSessionMaxLifespan();
+        this.sessionIdleTimeoutRememberMe = model.getSessionIdleTimeoutRememberMe();
+        this.sessionMaxLifespanRememberMe = model.getSessionMaxLifespanRememberMe();
     }
 
     @Override
@@ -92,5 +104,22 @@ public class CachedOrganization extends AbstractRevisioned implements InRealm {
 
     public Stream<IdentityProviderModel> getIdentityProviders() {
         return idps.stream();
+    }
+
+    //add our getters, setters are not required since the cached object is read only
+    public int getSessionIdleTimeout() { 
+	return sessionIdleTimeout; 
+    }
+
+    public int getSessionMaxLifespan() { 
+	return sessionMaxLifespan; 
+    }
+
+    public int getSessionIdleTimeoutRememberMe() { 
+	return sessionIdleTimeoutRememberMe; 
+    }
+
+    public int getSessionMaxLifespanRememberMe() { 
+	return sessionMaxLifespanRememberMe; 
     }
 }

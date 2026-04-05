@@ -266,6 +266,54 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
         return new OrganizationDomainModel(entity.getName(), entity.isVerified());
     }
 
+    //getter and setter implementations
+    //entity.getSessionIdleTimeout() calls the JPA entity's getter. 
+    //If JPA gives us a null, we return a -1 which tells Keycloak to look for the realm default instead.
+    //setter logic does the reverse of the getter
+    @Override
+        public int getSessionIdleTimeout() {
+        Integer v = entity.getSessionIdleTimeout();
+        return v != null ? v : -1;
+    }
+
+    @Override
+    public void setSessionIdleTimeout(int timeout) {
+        entity.setSessionIdleTimeout(timeout == -1 ? null : timeout);
+    }
+
+    @Override
+    public int getSessionMaxLifespan() {
+        Integer v = entity.getSessionMaxLifespan();
+        return v != null ? v : -1;
+    }
+
+    @Override
+    public void setSessionMaxLifespan(int timeout) {
+        entity.setSessionMaxLifespan(timeout == -1 ? null : timeout);
+    }
+
+    @Override
+    public int getSessionIdleTimeoutRememberMe() {
+        Integer v = entity.getSessionIdleTimeoutRememberMe();
+        return v != null ? v : -1;
+    }
+
+    @Override
+    public void setSessionIdleTimeoutRememberMe(int timeout) {
+        entity.setSessionIdleTimeoutRememberMe(timeout == -1 ? null : timeout);
+    }
+
+    @Override
+    public int getSessionMaxLifespanRememberMe() {
+        Integer v = entity.getSessionMaxLifespanRememberMe();
+        return v != null ? v : -1;
+    }
+
+    @Override
+    public void setSessionMaxLifespanRememberMe(int timeout) {
+        entity.setSessionMaxLifespanRememberMe(timeout == -1 ? null : timeout);
+    }
+
     /**
      * Validates the domain. Specifically, the method first checks if the specified domain is valid,
      * and then checks if the domain is not already linked to a different organization.
