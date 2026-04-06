@@ -44,7 +44,6 @@ public class CachedOrganization extends AbstractRevisioned implements InRealm {
     private final Set<OrganizationDomainModel> domains;
     private final Set<IdentityProviderModel> idps;
 
-    //add our variables
     private int sessionIdleTimeout;
     private int sessionMaxLifespan;
     private int sessionIdleTimeoutRememberMe;
@@ -62,7 +61,6 @@ public class CachedOrganization extends AbstractRevisioned implements InRealm {
         this.domains = organization.getDomains().collect(Collectors.toSet());
         this.idps = organization.getIdentityProviders().collect(Collectors.toSet());
 
-	//add our variables to constructor
 	this.sessionIdleTimeout = organization.getSessionIdleTimeout();
         this.sessionMaxLifespan = organization.getSessionMaxLifespan();
         this.sessionIdleTimeoutRememberMe = organization.getSessionIdleTimeoutRememberMe();

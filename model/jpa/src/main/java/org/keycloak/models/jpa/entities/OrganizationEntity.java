@@ -72,7 +72,6 @@ public class OrganizationEntity {
     @Column(name = "REALM_ID")
     private String realmId;
 
-    //new columns for session timeout
     @Column(name = "SESSION_IDLE_TIMEOUT")
     protected Integer sessionIdleTimeout;
 
@@ -199,7 +198,6 @@ public class OrganizationEntity {
         group.setOrganization(null);
     }
 
-    //our getter and setter methods for timeout
     public Integer getSessionIdleTimeout() { 
         return sessionIdleTimeout; 
     }

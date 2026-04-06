@@ -201,7 +201,6 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
             }
         }
 
-        // create the remaining domains.
         for (OrganizationDomainModel model : modelMap.values()) {
             OrganizationDomainEntity domainEntity = new OrganizationDomainEntity();
             domainEntity.setId(KeycloakModelUtils.generateId());
@@ -266,10 +265,6 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
         return new OrganizationDomainModel(entity.getName(), entity.isVerified());
     }
 
-    //getter and setter implementations
-    //entity.getSessionIdleTimeout() calls the JPA entity's getter. 
-    //If JPA gives us a null, we return a -1 which tells Keycloak to look for the realm default instead.
-    //setter logic does the reverse of the getter
     @Override
         public int getSessionIdleTimeout() {
         Integer v = entity.getSessionIdleTimeout();

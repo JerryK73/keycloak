@@ -31,8 +31,6 @@ public interface OrganizationModel {
     String ORGANIZATION_DOMAIN_ATTRIBUTE = "kc.org.domain";
     String ALIAS = "alias";
     String HIDE_IDP_ON_LOGIN_WHEN_ORGANIZATION_UNKNOWN = "kc.org.broker.login.hide-when-org-unknown";
-
-    //String constants for timeout attributes
     String SESSION_IDLE_TIMEOUT = "org.sessionIdleTimeout";
     String SESSION_MAX_LIFESPAN = "org.sessionMaxLifespan";
     String SESSION_IDLE_TIMEOUT_REMEMBER_ME = "org.sessionIdleTimeoutRememberMe";
@@ -141,13 +139,13 @@ public interface OrganizationModel {
 
     boolean isMember(UserModel user);
 
-    //getters and setters for the timeout attributes
+
     int getSessionIdleTimeout();
 
     void setSessionIdleTimeout(int timeout);
 
     int getSessionMaxLifespan();
-
+    
     void setSessionMaxLifespan(int timeout);
 
     int getSessionIdleTimeoutRememberMe();
@@ -155,6 +153,6 @@ public interface OrganizationModel {
     void setSessionIdleTimeoutRememberMe(int timeout);
 
     int getSessionMaxLifespanRememberMe();
-
+    
     void setSessionMaxLifespanRememberMe(int timeout);
 }
