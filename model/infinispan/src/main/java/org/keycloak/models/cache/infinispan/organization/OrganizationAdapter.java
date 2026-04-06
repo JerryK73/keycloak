@@ -194,9 +194,6 @@ public class OrganizationAdapter implements OrganizationModel {
         return getId().hashCode();
     }
 
-    // updated holds a fresh OrganizationModel from JPA, populated either because
-    // the cache was invalidated or because a write already happened this request.
-    // If updated is non-null, read from it directly instead of the stale cache.
     @Override
     public int getSessionIdleTimeout() {
         if (isUpdated()) return updated.getSessionIdleTimeout();

@@ -38,8 +38,6 @@ public class OrganizationRepresentation {
     private List<MemberRepresentation> members;
     private List<IdentityProviderRepresentation> identityProviders;
     private List<GroupRepresentation> groups;
-
-    //Adding our variables so that they are exposed to Admin REST API
     private Integer sessionIdleTimeout;
     private Integer sessionMaxLifespan;
     private Integer sessionIdleTimeoutRememberMe;
@@ -180,7 +178,6 @@ public class OrganizationRepresentation {
         groups.add(group);
     }
 
-    //our getters and setters
     public Integer getSessionIdleTimeout() { return sessionIdleTimeout; }
     public void setSessionIdleTimeout(Integer sessionIdleTimeout) { this.sessionIdleTimeout = sessionIdleTimeout; }
 
