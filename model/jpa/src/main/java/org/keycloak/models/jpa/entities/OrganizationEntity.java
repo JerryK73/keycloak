@@ -72,16 +72,16 @@ public class OrganizationEntity {
     @Column(name = "REALM_ID")
     private String realmId;
 
-    @Column(name = "SESSION_IDLE_TIMEOUT")
+    @Column(name = "SSO_SESSION_IDLE_TIMEOUT")
     protected Integer sessionIdleTimeout;
 
-    @Column(name = "SESSION_MAX_LIFESPAN")
+    @Column(name = "SSO_SESSION_MAX_LIFESPAN")
     protected Integer sessionMaxLifespan;
 
-    @Column(name = "SESSION_IDLE_TIMEOUT_REMEMBER_ME")
+    @Column(name = "SSO_SESSION_IDLE_TIMEOUT_REMEMBER_ME")
     protected Integer sessionIdleTimeoutRememberMe;
 
-    @Column(name = "SESSION_MAX_LIFESPAN_REMEMBER_ME")
+    @Column(name = "SSO_SESSION_MAX_LIFESPAN_REMEMBER_ME")
     protected Integer sessionMaxLifespanRememberMe;
 
     /**
