@@ -404,5 +404,41 @@ public class KeycloakModelUtilsTest {
         public Stream<IdentityProviderModel> getIdentityProviders() {
             return Stream.empty();
         }
+
+	@Override
+        public int getSessionIdleTimeout() {
+            return -1;
+        }
+
+        @Override
+        public void setSessionIdleTimeout(int timeout) {
+        }
+
+        @Override
+        public int getSessionMaxLifespan() {
+            return -1;
+        }
+
+        @Override
+        public void setSessionMaxLifespan(int timeout) {
+        }
+
+        @Override
+        public int getSessionIdleTimeoutRememberMe() {
+            return -1;
+        }
+
+        @Override
+        public void setSessionIdleTimeoutRememberMe(int timeout) {
+        }
+        
+        @Override
+        public int getSessionMaxLifespanRememberMe() {
+            return -1;
+        }
+
+        @Override
+        public void setSessionMaxLifespanRememberMe(int timeout) {
+        }
     }
 }
