@@ -273,7 +273,7 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
 
     @Override
     public void setSessionIdleTimeout(Integer timeout) {
-        entity.setSessionIdleTimeout(timeout == -1 ? null : timeout);
+        entity.setSessionIdleTimeout(timeout);
     }
 
     @Override
@@ -284,7 +284,7 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
 
     @Override
     public void setSessionMaxLifespan(Integer timeout) {
-        entity.setSessionMaxLifespan(timeout == -1 ? null : timeout);
+        entity.setSessionMaxLifespan(timeout);
     }
 
     @Override
@@ -295,7 +295,7 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
 
     @Override
     public void setSessionIdleTimeoutRememberMe(Integer timeout) {
-        entity.setSessionIdleTimeoutRememberMe(timeout == -1 ? null : timeout);
+        entity.setSessionIdleTimeoutRememberMe(timeout);
     }
 
     @Override
@@ -306,7 +306,7 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
 
     @Override
     public void setSessionMaxLifespanRememberMe(Integer timeout) {
-        entity.setSessionMaxLifespanRememberMe(timeout == -1 ? null : timeout);
+        entity.setSessionMaxLifespanRememberMe(timeout);
     }
 
     /**
