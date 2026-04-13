@@ -266,46 +266,46 @@ public final class OrganizationAdapter implements OrganizationModel, JpaModel<Or
     }
 
     @Override
-        public int getSessionIdleTimeout() {
+        public Integer getSessionIdleTimeout() {
         Integer v = entity.getSessionIdleTimeout();
         return v != null ? v : -1;
     }
 
     @Override
-    public void setSessionIdleTimeout(int timeout) {
+    public void setSessionIdleTimeout(Integer timeout) {
         entity.setSessionIdleTimeout(timeout == -1 ? null : timeout);
     }
 
     @Override
-    public int getSessionMaxLifespan() {
+    public Integer getSessionMaxLifespan() {
         Integer v = entity.getSessionMaxLifespan();
         return v != null ? v : -1;
     }
 
     @Override
-    public void setSessionMaxLifespan(int timeout) {
+    public void setSessionMaxLifespan(Integer timeout) {
         entity.setSessionMaxLifespan(timeout == -1 ? null : timeout);
     }
 
     @Override
-    public int getSessionIdleTimeoutRememberMe() {
+    public Integer getSessionIdleTimeoutRememberMe() {
         Integer v = entity.getSessionIdleTimeoutRememberMe();
         return v != null ? v : -1;
     }
 
     @Override
-    public void setSessionIdleTimeoutRememberMe(int timeout) {
+    public void setSessionIdleTimeoutRememberMe(Integer timeout) {
         entity.setSessionIdleTimeoutRememberMe(timeout == -1 ? null : timeout);
     }
 
     @Override
-    public int getSessionMaxLifespanRememberMe() {
+    public Integer getSessionMaxLifespanRememberMe() {
         Integer v = entity.getSessionMaxLifespanRememberMe();
         return v != null ? v : -1;
     }
 
     @Override
-    public void setSessionMaxLifespanRememberMe(int timeout) {
+    public void setSessionMaxLifespanRememberMe(Integer timeout) {
         entity.setSessionMaxLifespanRememberMe(timeout == -1 ? null : timeout);
     }
 

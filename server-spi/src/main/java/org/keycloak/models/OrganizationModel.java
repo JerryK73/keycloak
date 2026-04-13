@@ -140,19 +140,19 @@ public interface OrganizationModel {
     boolean isMember(UserModel user);
 
 
-    int getSessionIdleTimeout();
+    Integer getSessionIdleTimeout();
 
-    void setSessionIdleTimeout(int timeout);
+    void setSessionIdleTimeout(Integer timeout);
 
-    int getSessionMaxLifespan();
+    Integer getSessionMaxLifespan();
     
-    void setSessionMaxLifespan(int timeout);
+    void setSessionMaxLifespan(Integer timeout);
 
-    int getSessionIdleTimeoutRememberMe();
+    Integer getSessionIdleTimeoutRememberMe();
 
-    void setSessionIdleTimeoutRememberMe(int timeout);
+    void setSessionIdleTimeoutRememberMe(Integer timeout);
 
-    int getSessionMaxLifespanRememberMe();
+    Integer getSessionMaxLifespanRememberMe();
     
-    void setSessionMaxLifespanRememberMe(int timeout);
+    void setSessionMaxLifespanRememberMe(Integer timeout);
 }

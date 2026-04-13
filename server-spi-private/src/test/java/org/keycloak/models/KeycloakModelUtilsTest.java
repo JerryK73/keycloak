@@ -406,39 +406,39 @@ public class KeycloakModelUtilsTest {
         }
 
 	@Override
-        public int getSessionIdleTimeout() {
+        public Integer getSessionIdleTimeout() {
             return -1;
         }
 
         @Override
-        public void setSessionIdleTimeout(int timeout) {
+        public void setSessionIdleTimeout(Integer timeout) {
         }
 
         @Override
-        public int getSessionMaxLifespan() {
+        public Integer getSessionMaxLifespan() {
             return -1;
         }
 
         @Override
-        public void setSessionMaxLifespan(int timeout) {
+        public void setSessionMaxLifespan(Integer timeout) {
         }
 
         @Override
-        public int getSessionIdleTimeoutRememberMe() {
+        public Integer getSessionIdleTimeoutRememberMe() {
             return -1;
         }
 
         @Override
-        public void setSessionIdleTimeoutRememberMe(int timeout) {
+        public void setSessionIdleTimeoutRememberMe(Integer timeout) {
         }
         
         @Override
-        public int getSessionMaxLifespanRememberMe() {
+        public Integer getSessionMaxLifespanRememberMe() {
             return -1;
         }
 
         @Override
-        public void setSessionMaxLifespanRememberMe(int timeout) {
+        public void setSessionMaxLifespanRememberMe(Integer timeout) {
         }
     }
 }

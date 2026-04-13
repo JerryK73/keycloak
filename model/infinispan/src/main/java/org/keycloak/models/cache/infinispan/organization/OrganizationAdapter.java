@@ -195,49 +195,49 @@ public class OrganizationAdapter implements OrganizationModel {
     }
 
     @Override
-    public int getSessionIdleTimeout() {
+    public Integer getSessionIdleTimeout() {
         if (isUpdated()) return updated.getSessionIdleTimeout();
         return cached.getSessionIdleTimeout();
     }
 
     @Override
-    public void setSessionIdleTimeout(int timeout) {
+    public void setSessionIdleTimeout(Integer timeout) {
         getDelegateForUpdate();
         updated.setSessionIdleTimeout(timeout);
     }
 
     @Override
-    public int getSessionMaxLifespan() {
+    public Integer getSessionMaxLifespan() {
         if (isUpdated()) return updated.getSessionMaxLifespan();
         return cached.getSessionMaxLifespan();
     }
 
     @Override
-    public void setSessionMaxLifespan(int timeout) {
+    public void setSessionMaxLifespan(Integer timeout) {
         getDelegateForUpdate();
         updated.setSessionMaxLifespan(timeout);
     }
 
     @Override
-    public int getSessionIdleTimeoutRememberMe() {
+    public Integer getSessionIdleTimeoutRememberMe() {
         if (isUpdated()) return updated.getSessionIdleTimeoutRememberMe();
         return cached.getSessionIdleTimeoutRememberMe();
     }
 
     @Override
-    public void setSessionIdleTimeoutRememberMe(int timeout) {
+    public void setSessionIdleTimeoutRememberMe(Integer timeout) {
         getDelegateForUpdate();
         updated.setSessionIdleTimeoutRememberMe(timeout);
     }
 
     @Override
-    public int getSessionMaxLifespanRememberMe() {
+    public Integer getSessionMaxLifespanRememberMe() {
         if (isUpdated()) return updated.getSessionMaxLifespanRememberMe();
         return cached.getSessionMaxLifespanRememberMe();
     }
 
     @Override
-    public void setSessionMaxLifespanRememberMe(int timeout) {
+    public void setSessionMaxLifespanRememberMe(Integer timeout) {
         getDelegateForUpdate();
         updated.setSessionMaxLifespanRememberMe(timeout);
     }
