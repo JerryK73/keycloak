@@ -16,10 +16,10 @@ import { MultiLineInput } from "../components/multi-line-input/MultiLineInput";
 export type OrganizationFormType = AttributeForm &
   Omit<OrganizationRepresentation, "domains" | "attributes"> & {
     domains?: string[];
-    ssoSessionIdleTimeout?: number;
-    ssoSessionMaxLifespan?: number;
-    ssoSessionIdleTimeoutRememberMe?: number;
-    ssoSessionMaxLifespanRememberMe?: number;
+    sessionIdleTimeout?: number;
+    sessionMaxLifespan?: number;
+    sessionIdleTimeoutRememberMe?: number;
+    sessionMaxLifespanRememberMe?: number;
     rememberMe?: boolean;
   };
 

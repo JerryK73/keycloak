@@ -164,7 +164,7 @@ export default function DetailOrganization() {
             {...sessionsTab}
           >
             <PageSection variant="light">
-              <OrganizationSessionsTab />
+              <OrganizationSessionsTab save={save} />
             </PageSection>
           </Tab>
           <Tab

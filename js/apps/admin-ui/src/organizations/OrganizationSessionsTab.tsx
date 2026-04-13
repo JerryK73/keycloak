@@ -6,15 +6,19 @@ import {
 } from "@patternfly/react-core";
 import { Controller, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { FormPanel, HelpItem } from "@keycloak/keycloak-ui-shared";
+import { FormPanel, HelpItem, FormSubmitButton } from "@keycloak/keycloak-ui-shared";
 import { FormAccess } from "../components/form/FormAccess";
 import { TimeSelector } from "../components/time-selector/TimeSelector";
 import { OrganizationFormType } from "./OrganizationForm";
 
-export const OrganizationSessionsTab = () => {
+type OrganizationSessionsTabProps = {
+  save: (org: OrganizationFormType) => void;
+};
+
+export const OrganizationSessionsTab = ({ save }: OrganizationSessionsTabProps) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit, watch } = useFormContext<OrganizationFormType>();
+  const { control, handleSubmit, watch, formState } = useFormContext<OrganizationFormType>();
 
   const rememberMeEnabled = watch("rememberMe");
 
@@ -27,7 +31,7 @@ export const OrganizationSessionsTab = () => {
         <FormAccess
           isHorizontal
           role="manage-realm"
-          onSubmit={handleSubmit(() => {})}
+          onSubmit={handleSubmit(save)}
         >
           <FormGroup
             label={t("SSOSessionIdle")}
@@ -40,7 +44,7 @@ export const OrganizationSessionsTab = () => {
             }
           >
             <Controller
-              name="ssoSessionIdleTimeout"
+              name="sessionIdleTimeout"
               control={control}
               render={({ field }) => (
                 <TimeSelector
@@ -65,7 +69,7 @@ export const OrganizationSessionsTab = () => {
             }
           >
             <Controller
-              name="ssoSessionMaxLifespan"
+              name="sessionMaxLifespan"
               control={control}
               render={({ field }) => (
                 <TimeSelector
@@ -92,7 +96,7 @@ export const OrganizationSessionsTab = () => {
                 }
               >
                 <Controller
-                  name="ssoSessionIdleTimeoutRememberMe"
+                  name="sessionIdleTimeoutRememberMe"
                   control={control}
                   render={({ field }) => (
                     <TimeSelector
@@ -117,7 +121,7 @@ export const OrganizationSessionsTab = () => {
                 }
               >
                 <Controller
-                  name="ssoSessionMaxLifespanRememberMe"
+                  name="sessionMaxLifespanRememberMe"
                   control={control}
                   render={({ field }) => (
                     <TimeSelector
@@ -134,13 +138,12 @@ export const OrganizationSessionsTab = () => {
           )}
 
           <ActionGroup>
-            <Button
-              variant="primary"
-              type="submit"
+            <FormSubmitButton
+              formState={formState}
               data-testid="organization-sessions-save"
             >
               {t("save")}
-            </Button>
+            </FormSubmitButton>
             <Button variant="link" data-testid="organization-sessions-reset">
               {t("reset")}
             </Button>
