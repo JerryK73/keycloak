@@ -6,7 +6,11 @@ import {
 } from "@patternfly/react-core";
 import { Controller, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { FormPanel, HelpItem, FormSubmitButton } from "@keycloak/keycloak-ui-shared";
+import {
+  FormPanel,
+  HelpItem,
+  FormSubmitButton,
+} from "@keycloak/keycloak-ui-shared";
 import { FormAccess } from "../components/form/FormAccess";
 import { TimeSelector } from "../components/time-selector/TimeSelector";
 import { OrganizationFormType } from "./OrganizationForm";
@@ -15,10 +19,13 @@ type OrganizationSessionsTabProps = {
   save: (org: OrganizationFormType) => void;
 };
 
-export const OrganizationSessionsTab = ({ save }: OrganizationSessionsTabProps) => {
+export const OrganizationSessionsTab = ({
+  save,
+}: OrganizationSessionsTabProps) => {
   const { t } = useTranslation();
 
-  const { control, handleSubmit, watch, formState } = useFormContext<OrganizationFormType>();
+  const { control, handleSubmit, watch, formState } =
+    useFormContext<OrganizationFormType>();
 
   const rememberMeEnabled = watch("rememberMe");
 
